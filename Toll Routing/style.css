@@ -1,0 +1,75 @@
+body,
+html {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 1vw !important;
+  line-height: 1.5vw !important;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.routing-control {
+    background-color: #ffffff;
+    width: 270px;
+    height: 220px;
+    padding-left: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.result-control,
+.result-control-left,
+.summary-control {
+    background-color: #ffffff;
+    width: 300px;
+    min-height: 60px;
+    max-height: 260px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.result-control-left,
+.summary-control {
+  width: 240px;
+}
+
+#tollReportTableWrapper {
+    overflow: auto;
+    max-height: 200px;
+}
+
+#tollCostsTable,
+#summaryTable {
+    width: 100%;
+}
+
+.banner {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+  background-color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.banner p {
+  margin-block: 5px;
+}
