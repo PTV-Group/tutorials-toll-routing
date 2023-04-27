@@ -123,12 +123,16 @@ $(document).ready(function () {
                     <option value="EUR_TRUCK_7_49T">EUR_TRUCK_7_49T</option>
                     <option value="EUR_VAN">EUR_VAN</option>
                     <option value="EUR_CAR">EUR_CAR</option>
-                    <option value="USA_1_PICKUP">USA_1_PICKUP</option>
-                    <option value="USA_5_DELIVERY">USA_5_DELIVERY</option>
                     <option value="USA_8_SEMITRAILER_5AXLE">USA_8_SEMITRAILER_5AXLE</option>
+                    <option value="USA_5_DELIVERY">USA_5_DELIVERY</option>
+                    <option value="USA_1_PICKUP">USA_1_PICKUP</option>
                     <option value="AUS_LCV_LIGHT_COMMERCIAL">AUS_LCV_LIGHT_COMMERCIAL</option>
                     <option value="AUS_MR_MEDIUM_RIGID">AUS_MR_MEDIUM_RIGID</option>
                     <option value="AUS_HR_HEAVY_RIGID">AUS_HR_HEAVY_RIGID</option>
+                    <option value="IMEA_TRUCK_40T">IMEA_TRUCK_40T</option>
+                    <option value="IMEA_TRUCK_7_49T">IMEA_TRUCK_7_49T</option>
+                    <option value="IMEA_VAN">IMEA_VAN</option>
+                    <option value="IMEA_CAR">IMEA_CAR</option>
                 </select>
             </div>
             <div>
