@@ -101,7 +101,16 @@ $(document).ready(function () {
         if (document.getElementById("currency").value !== "") {
             tollQuery += "&options[currency]=" + document.getElementById("currency").value;
         }
-
+        if (document.getElementById("emissionStandard").value !== "") {
+            tollQuery += "&vehicle[emissionStandard]=" + document.getElementById("emissionStandard").value;
+        }
+        if (document.getElementById("co2EmissionClass").value !== "") {
+            tollQuery += "&vehicle[co2EmissionClass]=" + parseInt(document.getElementById("co2EmissionClass").value);
+        }
+        if (document.getElementById("referenceTime").value !== "" && document.getElementById("referenceDate").value) {
+            const date = new Date(document.getElementById('referenceDate').value + 'T' + document.getElementById('referenceTime').value).toISOString()
+            tollQuery += "&options[startTime]=" + date
+        }
         markers.forEach(marker => {
             tollQuery += "&waypoints=" + marker._latlng.lat + "," + marker._latlng.lng;
         });
@@ -136,6 +145,46 @@ $(document).ready(function () {
                 </select>
             </div>
             <div>
+                <label for="emissionStandard" style="display: block;">Emission Standard</label>
+                <select name="emissionStandard" id="emissionStandard" style="display: block;">
+                    <option value="">No Value</option>
+                    <option value="NONE">NONE</option>
+                    <option value="EURO_0">EURO_0</option>
+                    <option value="EURO_1">EURO_1</option>
+                    <option value="EURO_2">EURO_2</option>
+                    <option value="EURO_3">EURO_3</option>
+                    <option value="EURO_4">EURO_4</option>
+                    <option value="EURO_5">EURO_5</option>
+                    <option value="EURO_EEV">EURO_EEV</option>
+                    <option value="EURO_6">EURO_6</option>
+                    <option value="EURO_6C">EURO_6C</option>
+                    <option value="EURO_6D_TEMP">EURO_6D_TEMP</option>
+                    <option value="EURO_6D">EURO_6D</option>
+                    <option value="EURO_6E">EURO_6E</option>
+                    <option value="EURO_7">EURO_7</option>
+                </select>
+            </div>
+            <div>
+            <label for="co2EmissionClass" style="display: block;">Co2 Emission Class</label>
+            <select name="co2EmissionClass" id="co2EmissionClass" style="display: block;">
+                <option value="">No Value</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+            <div>
+                <span>Start time</span>
+                <table style="border: none;">
+                    <tr>
+                        <td height="20px" style="text-align:right; padding: 0px 5px 0px 0px; border: none;"><input type="date" id="referenceDate" value="2023-08-29"/></td>
+                        <td height="20px" style="text-align:right; border: none;"><input type="time" id="referenceTime" value="12:00"/></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
                 <label for="currency" style="display: block;">Currency</label>
                 <select name="currency" id="currency" style="display: block;">
                     <option value="">No Value</option>
@@ -164,7 +213,11 @@ $(document).ready(function () {
         document.getElementById("TOLL_SECTIONS").addEventListener("click", fetchRoute);
         document.getElementById("TOLL_EVENTS").addEventListener("click", fetchRoute);
         document.getElementById("vehicleProfile").addEventListener("change", fetchRoute);
+        document.getElementById("emissionStandard").addEventListener("change", fetchRoute);
+        document.getElementById("referenceTime").addEventListener("change", fetchRoute);
+        document.getElementById("referenceDate").addEventListener("change", fetchRoute);
         document.getElementById("currency").addEventListener("change", fetchRoute);
+        document.getElementById("co2EmissionClass").addEventListener("change", fetchRoute);
     }
     function getIcon() {
         if (markers.length === 0) {
