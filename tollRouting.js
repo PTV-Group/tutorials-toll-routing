@@ -104,6 +104,9 @@ $(document).ready(function () {
         if (document.getElementById("emissionStandard").value !== "") {
             tollQuery += "&vehicle[emissionStandard]=" + document.getElementById("emissionStandard").value;
         }
+        if (document.getElementById("engineType").value !== "") {
+            tollQuery += "&vehicle[engineType]=" + document.getElementById("engineType").value;
+        }
         if (document.getElementById("co2EmissionClass").value !== "") {
             tollQuery += "&vehicle[co2EmissionClass]=" + parseInt(document.getElementById("co2EmissionClass").value);
         }
@@ -126,7 +129,7 @@ $(document).ready(function () {
                 <label for="vehicleProfile" style="display: block;">Vehicle Profile</label>
                 <select name="vehicleProfile" id="vehicleProfile" style="display: block;">
                     <option value="">No Value</option>
-                    <option value="EUR_TRAILER_TRUCK">EUR_TRAILER_TRUCK</option>
+                    <option value="EUR_TRAILER_TRUCK" selected>EUR_TRAILER_TRUCK</option>
                     <option value="EUR_TRUCK_40T">EUR_TRUCK_40T</option>
                     <option value="EUR_TRUCK_11_99T">EUR_TRUCK_11_99T</option>
                     <option value="EUR_TRUCK_7_49T">EUR_TRUCK_7_49T</option>
@@ -145,6 +148,15 @@ $(document).ready(function () {
                 </select>
             </div>
             <div>
+                <label for="engineType" style="display: block;">Engine Type</label>
+                <select name="engineType" id="engineType" style="display: block;">
+                    <option value="">No Value</option>
+                    <option value="COMBUSTION" selected>COMBUSTION</option>
+                    <option value="ELECTRIC">ELECTRIC</option>
+                    <option value="HYBRID">HYBRID</option>
+                </select>
+            </div>
+            <div>
                 <label for="emissionStandard" style="display: block;">Emission Standard</label>
                 <select name="emissionStandard" id="emissionStandard" style="display: block;">
                     <option value="">No Value</option>
@@ -154,7 +166,7 @@ $(document).ready(function () {
                     <option value="EURO_2">EURO_2</option>
                     <option value="EURO_3">EURO_3</option>
                     <option value="EURO_4">EURO_4</option>
-                    <option value="EURO_5">EURO_5</option>
+                    <option value="EURO_5" selected>EURO_5</option>
                     <option value="EURO_EEV">EURO_EEV</option>
                     <option value="EURO_6">EURO_6</option>
                     <option value="EURO_6C">EURO_6C</option>
@@ -165,16 +177,16 @@ $(document).ready(function () {
                 </select>
             </div>
             <div>
-            <label for="co2EmissionClass" style="display: block;">Co2 Emission Class</label>
-            <select name="co2EmissionClass" id="co2EmissionClass" style="display: block;">
-                <option value="">No Value</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-        </div>
+                <label for="co2EmissionClass" style="display: block;">Co2 Emission Class</label>
+                <select name="co2EmissionClass" id="co2EmissionClass" style="display: block;">
+                    <option value="">No Value</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
             <div>
                 <span>Start time</span>
                 <table style="border: none;">
@@ -214,6 +226,7 @@ $(document).ready(function () {
         document.getElementById("TOLL_EVENTS").addEventListener("click", fetchRoute);
         document.getElementById("vehicleProfile").addEventListener("change", fetchRoute);
         document.getElementById("emissionStandard").addEventListener("change", fetchRoute);
+        document.getElementById("engineType").addEventListener("change", fetchRoute);
         document.getElementById("referenceTime").addEventListener("change", fetchRoute);
         document.getElementById("referenceDate").addEventListener("change", fetchRoute);
         document.getElementById("currency").addEventListener("change", fetchRoute);
