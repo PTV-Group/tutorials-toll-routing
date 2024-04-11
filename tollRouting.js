@@ -135,6 +135,10 @@ $(document).ready(function () {
                     <option value="EUR_TRUCK_7_49T">EUR_TRUCK_7_49T</option>
                     <option value="EUR_VAN">EUR_VAN</option>
                     <option value="EUR_CAR">EUR_CAR</option>
+                    <option value="EUR_TLN_TRUCK_40T">EUR_TLN_TRUCK_40T</option>
+                    <option value="EUR_TLN_TRUCK_20T">EUR_TLN_TRUCK_20T</option>
+                    <option value="EUR_TLN_TRUCK_11_99T">EUR_TLN_TRUCK_11_99T</option>
+                    <option value="EUR_TLN_VAN">EUR_TLN_VAN</option>
                     <option value="USA_8_SEMITRAILER_5AXLE">USA_8_SEMITRAILER_5AXLE</option>
                     <option value="USA_5_DELIVERY">USA_5_DELIVERY</option>
                     <option value="USA_1_PICKUP">USA_1_PICKUP</option>
