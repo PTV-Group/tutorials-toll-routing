@@ -124,7 +124,7 @@ $(document).ready(function () {
         routingControl.onAdd = function (map) {
             const div = L.DomUtil.create('div', 'routing-control');
             const html = `
-            <h2>Toll Routing</h2>
+            <h2>Toll Calculation</h2>
             <div>
                 <label for="vehicleProfile" style="display: block;">Vehicle Profile</label>
                 <select name="vehicleProfile" id="vehicleProfile" style="display: block;">
