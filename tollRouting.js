@@ -11,9 +11,9 @@ $(document).ready(function () {
         position: 'bottomright'
     }).addTo(map);
     var tileLayer = new L.tileLayer(
-        "https://api.myptv.com/rastermaps/v1/image-tiles/{z}/{x}/{y}?size={tileSize}",
+        "https://api.myptv.com/rastermaps/v1/image-tiles/{z}/{x}/{y}?size={tileSize}&layers=background,transport,labels,toll",
         {
-            attribution: "© " + new Date().getFullYear() + ", PTV Group, HERE",
+            attribution: "© " + new Date().getFullYear() + ", PTV Logistics, HERE",
             tileSize: 256,
             trackResize: false,
         },
